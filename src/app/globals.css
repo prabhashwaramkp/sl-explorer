@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-forest;
+  }
+  a {
+    @apply underline decoration-clay decoration-2 underline-offset-2;
+  }
+  ::selection {
+    background-color: #B9793E33;
+  }
+  :focus-visible {
+    outline: 2px solid #B9793E;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
