@@ -98,3 +98,8 @@ src/app/              <- pages (homepage, [slug], activity/, region/)
 src/components/       <- Hero, PhotoGallery, RelatedGrid, Nav, SearchBar
 src/lib/content.ts    <- reads content/, powers tagging + related content
 ```
+
+
+## Development
+
+This project is under active development.

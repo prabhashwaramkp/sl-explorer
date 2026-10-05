@@ -1,0 +1,24 @@
+warning: in the working copy of '.env.local.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.env.local.example b/.env.local.example[m
+[1mindex f4d34ba..2a03413 100644[m
+[1m--- a/.env.local.example[m
+[1m+++ b/.env.local.example[m
+[36m@@ -1,3 +1,3 @@[m
+ # Copy this file to .env.local and fill in your Cloudinary cloud name[m
+ # (find it on your Cloudinary dashboard - it's free to sign up)[m
+[31m-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloud-name-here[m
+[32m+[m[32mNEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=pxo6piqc[m
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 662b554..b897235 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -98,3 +98,8 @@[m [msrc/app/              <- pages (homepage, [slug], activity/, region/)[m
+ src/components/       <- Hero, PhotoGallery, RelatedGrid, Nav, SearchBar[m
+ src/lib/content.ts    <- reads content/, powers tagging + related content[m
+ ```[m
+[32m+[m
+[32m+[m
+[32m+[m[32m## Development[m
+[32m+[m
+[32m+[m[32mThis project is under active development.[m
