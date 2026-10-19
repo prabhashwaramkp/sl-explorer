@@ -19,22 +19,24 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
     );
 
   return (
-    <section aria-label="Photo gallery" className="my-10 w-full">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+    <section aria-label="Photo gallery" className="my-10 w-full min-w-0">
+      {/* One responsive masonry layout avoids competing mobile/desktop copies. */}
+      <div className="columns-1 gap-3 sm:columns-2 lg:columns-3 [column-gap:0.75rem]">
         {images.map((img, i) => (
           <button
             key={img.src}
             type="button"
             onClick={() => setOpenIndex(i)}
             aria-label={img.caption ? `View photo: ${img.caption}` : `View photo ${i + 1}`}
-            className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm border border-fog bg-fog"
+            className="mb-3 block w-full break-inside-avoid overflow-hidden rounded-sm border border-fog bg-fog"
           >
             <Image
               src={img.src}
               alt={img.caption ?? ""}
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-[1.02]"
-              sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+              width={600}
+              height={i % 3 === 0 ? 800 : 450}
+              className="block h-auto w-full object-cover"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             />
           </button>
         ))}
