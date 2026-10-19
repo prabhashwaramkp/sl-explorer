@@ -17,9 +17,9 @@ export default function HomePage() {
   const featured = posts.filter((p) => p.type === "hub").slice(0, 3);
 
   return (
-    <div>
+    <div className="w-full min-w-0">
       {/* Hero */}
-      <section className="relative flex min-h-[70vh] items-end overflow-hidden">
+      <section className="relative flex h-[clamp(520px,70vh,820px)] w-full items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="home/hero"
@@ -34,10 +34,10 @@ export default function HomePage() {
         </div>
 
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16">
-          <h1 className="max-w-xl text-4xl text-paper sm:text-5xl">
+          <h1 className="max-w-3xl text-4xl text-paper sm:text-5xl lg:text-6xl">
             Find the Sri Lanka the guidebooks skip.
           </h1>
-          <p className="mt-4 max-w-md text-paper/90">
+          <p className="mt-4 max-w-xl text-paper/90">
             Trail-by-trail guides to trekking, waterfalls, wildlife, and
             wellness — written by people who&apos;ve actually walked the
             route.
@@ -46,7 +46,7 @@ export default function HomePage() {
       </section>
 
       {/* Explore by activity */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
+      <section className="mx-auto w-full max-w-6xl px-6 py-14">
         <h2 className="mb-6 text-2xl">Explore by activity</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {activityTiles.map(({ label, href, icon: Icon }) => (
@@ -63,11 +63,11 @@ export default function HomePage() {
       </section>
 
       {/* Featured */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto w-full max-w-6xl px-6 pb-16">
         <h2 className="mb-6 text-2xl">Start here: the Pekoe Trail</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {featured.map((post) => (
-            <Link key={post.slug} href={`/${post.slug}`} className="block no-underline">
+            <Link key={post.slug} href={`/${post.slug}`} className="block min-w-0 no-underline">
               <div className="relative mb-3 h-48 w-full overflow-hidden rounded-sm border border-fog">
                 <Image
                   src={post.heroImage}
